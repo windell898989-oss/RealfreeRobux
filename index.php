@@ -1,4 +1,3 @@
-
 /* 
 Please keep this copyright statemnet in tact
 Original Creator Of This Webhook IP Logger: ᴮᵉᵗᵗᵉʳ ᴼᶠᶠ ᴳᵒⁿᵉ#0869
